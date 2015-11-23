@@ -10,3 +10,8 @@ Parse the mod_security ruleset and export into other formats.
 1. `python parser.py owasp/base_rules/modsecurity_crs_20_protocol_violations.conf`
 
 This doesn't really do much of anything right now besides parse the rules and identify which ones we could conceivably translate to AWS WAF.
+
+See `sample-output.txt` for the results of:
+```shell
+find owasp/*_rules/ -name '*.conf' -exec python parser.py \{\} \; &> sample-output.txt
+```
